@@ -1,10 +1,7 @@
 
-(/*
 Covid 19 Data Exploration 
 
 Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
-
-*/
 
 Select *
 From PortfolioProject..CovidDeaths
@@ -58,7 +55,6 @@ Group by Location
 order by TotalDeathCount desc
 
 
-
 -- BREAKING THINGS DOWN BY CONTINENT
 
 -- Showing contintents with the highest death count per population
@@ -69,7 +65,6 @@ From PortfolioProject..CovidDeaths
 Where continent is not null 
 Group by continent
 order by TotalDeathCount desc
-
 
 
 -- GLOBAL NUMBERS
@@ -116,7 +111,6 @@ Select *, (RollingPeopleVaccinated/Population)*100
 From PopvsVac
 
 
-
 -- Using Temp Table to perform Calculation on Partition By in previous query
 
 DROP Table if exists #PercentPopulationVaccinated
@@ -143,8 +137,6 @@ Join PortfolioProject..CovidVaccinations vac
 
 Select *, (RollingPeopleVaccinated/Population)*100
 From #PercentPopulationVaccinated
-
-
 
 
 -- Creating View to store data for later visualizations
